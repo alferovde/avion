@@ -1,0 +1,34 @@
+@import url("./normalize.css");
+
+:root {
+  --White: white;
+  --LightGrey: #f9f9f9;
+  --DarkPrimary: #2a254b;
+  --Primary: #4e4d93;
+  --BorderGrey: #ebe8f4;
+  --BorderDark: #cac6da;
+
+  --animate-duration: 800ms;
+}
+
+.App {
+  font-family: "Satoshi", sans-serif;
+  // font-family: 'Clash Display', sans-serif;
+  min-width: 390px;
+}
+
+.container {
+  padding: 0 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 390px) {
+  .container {
+    background-color: rgb(73, 192, 103);
+
+    max-width: 390px;
+    padding: 0 24px;
+  }
+}

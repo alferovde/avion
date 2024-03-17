@@ -1,0 +1,52 @@
+.mobilemenu__container {
+  background-color: #00000048;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  //   width: 100%;
+  //   height: 1000vh;
+}
+.mobile-menu__wrapper {
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 70px 24px;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile__closebtn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 555;
+  color: black;
+  &::before {
+    width: 15px;
+    border: 1px solid black;
+    content: "";
+    transform: rotate(45deg);
+  }
+  &::after {
+    width: 15px;
+    border: 1px solid black;
+    content: "";
+    transform: rotate(-45deg);
+    position: fixed;
+  }
+}
