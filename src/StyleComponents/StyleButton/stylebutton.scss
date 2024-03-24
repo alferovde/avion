@@ -1,0 +1,19 @@
+.style-button {
+  border: none;
+  outline: none;
+  width: 170px;
+  height: 56px;
+  color: var(--White);
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    background-color: #181bdf !important;
+  }
+
+  &:focus {
+    background-color: #868686 !important;
+  }
+}

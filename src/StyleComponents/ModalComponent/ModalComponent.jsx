@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import "./modalcomponent.scss";
-
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "../../Store/Reducers/ModalWindowsReducer/hiddenWindow";
 const ModalComponent = ({
   children,
-  value,
-  setValue,
   width = undefined,
   height = undefined,
 }) => {
+  const visibleModal = useSelector((state) => state.modalWindown.value);
+  const dispatch = useDispatch();
   const [styleAnimate, setStyleAnimate] = useState(
     "modal__container animate__animated animate__fadeIn"
   );
+
+  console.log("===>", visibleModal);
   const closeModal = () => {
-    if (value) {
+    if (visibleModal) {
       setStyleAnimate("modal__container animate__animated animate__fadeOut");
     }
 
     setTimeout(() => {
-      setValue(!value);
+      dispatch(toggle("value"));
     }, 1000);
   };
 

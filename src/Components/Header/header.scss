@@ -130,9 +130,25 @@
     padding: 20px 24px;
 
     max-width: 390px;
+    border-bottom: none;
+
+    svg {
+      width: 65px;
+      height: 50px;
+    }
   }
 
   .header__humburger {
     display: flex;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .header__search {
+    svg {
+      width: 30px;
+      height: 30px;
+    }
   }
 }

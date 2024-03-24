@@ -3,10 +3,14 @@ import React from "react";
 import "./mobilemenu.scss";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
 import SVGComponent from "../../StyleComponents/SVGComponent/SVGComponent";
-import { shopingCart, userAvatar } from "../../Images/sprites";
+import { shopingCart, userAvatar, searchImg } from "../../Images/sprites";
 import ShopingCartComponent from "./../../StyleComponents/ShopingCartComponent/ShopingCartComponent";
-
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "../../Store/Reducers/ModalWindowsReducer/hiddenWindow";
+import UserLogin from "../UserLogin/UserLogin";
+import Search from "../Search/Search";
 const MobileMenu = (props) => {
+  const dispatch = useDispatch();
   const [hiddenMenuStyle, setHiddenMenuStyle] = useState(
     "mobile-menu__wrapper animate__animated  animate__slideInRight "
   );
@@ -29,7 +33,18 @@ const MobileMenu = (props) => {
 
         <NavigationMenu className="mobile-menu" />
         <br />
-        <ShopingCartComponent onClick={() => console.log("sdf")} />
+
+        <ShopingCartComponent onClick={() => dispatch(toggle("hiddenCart"))} />
+        <br />
+        <div className="" onClick={() => dispatch(toggle("hiddenLogin"))}>
+          {/* <UserLogin /> */}
+          <SVGComponent src={userAvatar} />
+        </div>
+        <br />
+        <div className="" onClick={() => dispatch(toggle("hiddenSearch"))}>
+          {/* <Search /> */}
+          <SVGComponent src={searchImg} />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,102 @@
+.listing-popular {
+  min-height: 744px;
+}
+
+.listing-popular__wrapper {
+  min-height: 100%;
+  h2 {
+    text-align: left;
+    font-size: 32px;
+    padding-top: 64px;
+  }
+}
+
+.listing-popular__items {
+  margin-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  height: 500px;
+}
+
+.listing-popular__btn {
+  margin-top: 44px;
+  text-align: center;
+  button {
+    color: #2a254b;
+  }
+}
+@media (max-width: 1409px) {
+  .listing-popular {
+    min-height: 1244px;
+  }
+  .listing-popular__wrapper {
+    min-height: 100%;
+  }
+
+  .listing-popular__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1149px) {
+  .listing-popular {
+    width: 100%;
+    min-height: 1344px;
+  }
+  .listing-popular__wrapper {
+    height: 1044px;
+  }
+  .listing-popular__items {
+    width: 100%;
+    gap: 5px;
+    min-height: 1544px;
+    min-height: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 774px) {
+  .listing-popular {
+    min-height: 1200px;
+  }
+  .listing-popular__items {
+    gap: 0px;
+  }
+
+  .listing-popular__wrapper {
+    h2 {
+      text-align: left;
+      font-size: 32px;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 689px) {
+  .listing-popular {
+    min-height: 1544px;
+  }
+  .listing-popular__wrapper {
+    min-height: 1344px;
+    width: 100%;
+  }
+  .listing-popular__items {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .listing-popular__wrapper {
+    min-height: 1344px;
+    max-width: 100%;
+  }
+}

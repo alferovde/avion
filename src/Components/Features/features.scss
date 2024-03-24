@@ -1,0 +1,34 @@
+.features {
+  height: 355px;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.features__items {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+@media (max-width: 768px) {
+  .features {
+    height: 755px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .features__items {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .features {
+    margin-top: 50px;
+
+    h2 {
+      text-align: left;
+    }
+  }
+}
