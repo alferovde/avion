@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.scss";
 import { useSelector } from "react-redux";
 import StyleInput from "../../StyleComponents/StyleInput/StyleInput";
 import StyleButton from "../../StyleComponents/StyleButton/StyleButton";
+import StyleNotification from "../../StyleComponents/StyleNotification/StyleNotification";
 const SignUp = () => {
   const { email_description, email_title } = useSelector(
     (state) => state.mainPage.value
   );
 
+  const [signUpValue, setSignUpValue] = useState("");
+  const [hotification, setNotification] = useState(false);
+  const [notificationValue, setNotificationValue] = useState({});
+
+  const sendSignUpData = () => {
+    if (signUpValue == "") {
+      setNotification((prev) => !prev);
+      setNotificationValue({ type: "error", text: "Введите свой email" });
+    }
+
+    if (!signUpValue.includes("@") && signUpValue !== "") {
+      setNotification((prev) => !prev);
+      setNotificationValue({
+        type: "warning",
+        text: "Введите правильный email",
+      });
+    } else if (signUpValue !== "" && signUpValue.includes("@")) {
+      setNotification((prev) => !prev);
+      setNotificationValue({
+        type: "success",
+        text: `${signUpValue} подписался на рассылку!`,
+      });
+    }
+
+    setTimeout(() => {
+      setNotification((prev) => !prev);
+    }, 3500);
+  };
+  console.log("1-=-=>", signUpValue.includes("@"));
+  console.log("2-=-=>", signUpValue);
   const styleInput = {
     placeholder: "your@email.com",
     width: "354px",
@@ -20,13 +51,24 @@ const SignUp = () => {
           <h2>{email_title}</h2>
           <p>{email_description}</p>
           <div className="signup__form">
-            <StyleInput style={styleInput} />
-            <StyleButton width="118px" bgColor="#2A254B" color={"white"}>
+            <StyleInput style={styleInput} onChange={setSignUpValue} />
+            <StyleButton
+              width="118px"
+              bgColor="#2A254B"
+              color={"white"}
+              onClick={sendSignUpData}
+            >
               Sign up
             </StyleButton>
           </div>
         </div>
       </div>
+      {hotification ? (
+        <StyleNotification
+          text={notificationValue.text}
+          type={notificationValue.type}
+        />
+      ) : undefined}
     </section>
   );
 };

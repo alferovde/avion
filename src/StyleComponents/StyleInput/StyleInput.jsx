@@ -1,8 +1,13 @@
 import React from "react";
 import "./myinput.scss";
-const StyleInput = ({ style }) => {
+const StyleInput = ({ style, onChange }) => {
   return (
-    <input style={style} placeholder={style.placeholder} className="myinput" />
+    <input
+      style={style}
+      placeholder={style.placeholder}
+      onChange={(e) => onChange(e.target.value)}
+      className="myinput"
+    />
   );
 };
 

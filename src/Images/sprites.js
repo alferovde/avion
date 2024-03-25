@@ -86,3 +86,91 @@ export const mobileMuneHamburger = (
     <path d="M14 9H2V10H14V9Z" fill="#2A254B" />
   </svg>
 );
+
+export const errorIcon = (
+  <svg
+    width="800px"
+    height="800px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16 2H8L2 8V16L8 22H16L22 16V8L16 2Z"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M12 8V12"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M12 16.0195V16"
+      stroke="#000000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export const warningIcon = (
+  <svg
+    fill="#000000"
+    height="800px"
+    width="800px"
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+  >
+    <g>
+      <g>
+        <g>
+          <path
+            d="M437.016,74.984c-99.979-99.979-262.075-99.979-362.033,0.002c-99.978,99.978-99.978,262.073,0.004,362.031
+     c99.954,99.978,262.05,99.978,362.029-0.002C536.995,337.059,536.995,174.964,437.016,74.984z M406.848,406.844
+     c-83.318,83.318-218.396,83.318-301.691,0.004c-83.318-83.299-83.318-218.377-0.002-301.693
+     c83.297-83.317,218.375-83.317,301.691,0S490.162,323.549,406.848,406.844z"
+          />
+          <path
+            d="M255.996,85.338c-11.782,0-21.333,9.551-21.333,21.333v213.333c0,11.782,9.551,21.333,21.333,21.333
+     c11.782,0,21.333-9.551,21.333-21.333V106.671C277.329,94.889,267.778,85.338,255.996,85.338z"
+          />
+          <path
+            d="M255.996,384.004c-11.776,0-21.333,9.557-21.333,21.333s9.557,21.333,21.333,21.333c11.776,0,21.333-9.557,21.333-21.333
+     S267.772,384.004,255.996,384.004z"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
+export const successIcon = (
+  <svg
+    fill="#000000"
+    width="800px"
+    height="800px"
+    viewBox="0 0 36 36"
+    version="1.1"
+    preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>success-standard-line</title>
+    <path
+      class="clr-i-outline clr-i-outline-path-1"
+      d="M18,2A16,16,0,1,0,34,18,16,16,0,0,0,18,2Zm0,30A14,14,0,1,1,32,18,14,14,0,0,1,18,32Z"
+    ></path>
+    <path
+      class="clr-i-outline clr-i-outline-path-2"
+      d="M28,12.1a1,1,0,0,0-1.41,0L15.49,23.15l-6-6A1,1,0,0,0,8,18.53L15.49,26,28,13.52A1,1,0,0,0,28,12.1Z"
+    ></path>
+    <rect x="0" y="0" width="36" height="36" fill-opacity="0" />
+  </svg>
+);

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ListingNew from "../../Components/ListingNew/ListingNew";
 import ListingPopular from "../../Components/ListingPopular/ListingPopular";
 import SignUp from "../../Components/SignUp/SignUp";
+import FeaturesTouch from "../../Components/FeaturesTouch/FeaturesTouch";
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const MainPage = () => {
       <ListingNew />
       <ListingPopular />
       <SignUp />
+      <FeaturesTouch />
     </div>
   );
 };
