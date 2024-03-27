@@ -27,6 +27,21 @@
     line-height: 150%;
   }
 
+  .signup-component {
+    input {
+      font-size: 16px;
+      width: 354px;
+
+      &input::placeholder {
+        color: var(--DarkPrimary);
+      }
+    }
+
+    button {
+      background-color: var(--DarkPrimary);
+      width: 118px;
+    }
+  }
   input {
     font-size: 16px;
   }
@@ -47,13 +62,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    input,
-    button {
-      width: 90% !important;
-      margin: 0 auto;
 
-      &:last-child {
-        margin-top: 15px;
+    .signup-component {
+      input,
+      button {
+        width: 90% !important;
+        margin: 0 auto;
+
+        &:last-child {
+          margin-top: 15px;
+        }
       }
     }
   }

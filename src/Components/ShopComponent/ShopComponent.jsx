@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const ShopComponent = ({ title, price, img, id, is_large, style }) => {
   const storage_url = process.env.REACT_APP_STORAGE_SERVER;
   const [animation, setAnimation] = useState("");
-  console.log("-=>", style);
 
   let item_img = storage_url + img;
   const navigate = useNavigate();
@@ -15,8 +14,6 @@ const ShopComponent = ({ title, price, img, id, is_large, style }) => {
       navigate(`/product/${id}`);
     }, 1000);
   };
-
-  console.log("=-=>", is_large);
 
   return (
     <div

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import StyleInput from "../../StyleComponents/StyleInput/StyleInput";
 import StyleButton from "../../StyleComponents/StyleButton/StyleButton";
 import StyleNotification from "../../StyleComponents/StyleNotification/StyleNotification";
+import SignUpComponent from "../../StyleComponents/SignUpComponent/SignUpComponent";
 const SignUp = () => {
   const { email_description, email_title } = useSelector(
     (state) => state.mainPage.value
@@ -37,8 +38,7 @@ const SignUp = () => {
       setNotification((prev) => !prev);
     }, 3500);
   };
-  console.log("1-=-=>", signUpValue.includes("@"));
-  console.log("2-=-=>", signUpValue);
+
   const styleInput = {
     placeholder: "your@email.com",
     width: "354px",
@@ -51,7 +51,11 @@ const SignUp = () => {
           <h2>{email_title}</h2>
           <p>{email_description}</p>
           <div className="signup__form">
-            <StyleInput style={styleInput} onChange={setSignUpValue} />
+            <SignUpComponent
+              placeholder={"your@email.com"}
+              // style={styleInput}
+            />
+            {/* <StyleInput style={styleInput} onChange={setSignUpValue} />
             <StyleButton
               width="118px"
               bgColor="#2A254B"
@@ -59,7 +63,7 @@ const SignUp = () => {
               onClick={sendSignUpData}
             >
               Sign up
-            </StyleButton>
+            </StyleButton> */}
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@ const StyleInput = ({ style, onChange }) => {
   return (
     <input
       style={style}
-      placeholder={style.placeholder}
-      onChange={(e) => onChange(e.target.value)}
+      placeholder={style?.placeholder}
+      onChange={onChange ? (e) => onChange(e.target.value) : undefined}
       className="myinput"
     />
   );
