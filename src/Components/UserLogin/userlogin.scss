@@ -1,0 +1,108 @@
+.userLogin__container {
+}
+
+.userLogin__wrapper {
+  display: flex;
+  transition: 0.2s;
+}
+
+.userLogin__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 250px;
+  width: 60%;
+  padding-top: 30px;
+  padding-left: 30px;
+
+  input {
+    background-color: rgba(128, 128, 128, 0.245);
+
+    width: 90%;
+    margin: 15px auto 0;
+  }
+
+  input[type="password"] {
+    &:checked {
+      height: 70px;
+    }
+  }
+
+  button {
+    width: 90%;
+    margin: 25px auto 0;
+    background-color: var(--DarkPrimary);
+  }
+
+  .register__check {
+    width: 90%;
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      // max-width: 100%;
+      input {
+        height: 20px;
+        width: 20px;
+        margin: 0;
+      }
+    }
+  }
+
+  .password_input {
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 30px;
+      right: 15%;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.userLogin__right {
+  width: 40%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  svg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.notification2 {
+  height: 50px;
+  background-color: #e46e6e;
+}
+
+@media (max-width: 854px) {
+  .userLogin__right {
+    svg {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .userLogin__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .userLogin__left {
+    width: 100%;
+    padding-top: 0;
+  }
+  .userLogin__right {
+    display: none;
+  }
+  .userLogin__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 50px;
+  }
+}

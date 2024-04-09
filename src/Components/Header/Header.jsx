@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./header.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import {
   logoAvion,
@@ -18,6 +18,8 @@ import ModalComponent from "../../StyleComponents/ModalComponent/ModalComponent"
 import Search from "./../Search/Search";
 import { useSelector, useDispatch } from "react-redux";
 import { toggle } from "../../Store/Reducers/ModalWindowsReducer/hiddenWindow";
+import UserInfoMenu from "../UserInfoMenu/UserInfoMenu";
+import { useCookies } from "react-cookie";
 
 const Header = () => {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 580px)" });
@@ -26,9 +28,10 @@ const Header = () => {
   const hiddenCart = useSelector((state) => state.modalWindown.hiddenCart);
   const hiddenLogin = useSelector((state) => state.modalWindown.hiddenLogin);
   const modalWindow = useSelector((state) => state.modalWindown.value);
-
+  const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const [cookies] = useCookies();
   const navigationMenu = () => {
     if (!isTabletOrMobile) {
       return (
@@ -70,12 +73,21 @@ const Header = () => {
             </NavLink>
           </div>
           <div className="header__cart">
-            <div className="" onClick={() => dispatch(toggle("hiddenCart"))}>
+            <div
+              className=""
+              //  onClick={() => dispatch(toggle("hiddenCart"))}
+              onClick={() =>
+                navigate(
+                  `/cart/${
+                    cookies.current_user?.id ? cookies.current_user?.id : 1
+                  }`,
+                  { replace: true }
+                )
+              }
+            >
               <SVGComponent src={shopingCart} />
             </div>
-            <div className="" onClick={() => dispatch(toggle("hiddenLogin"))}>
-              <SVGComponent src={userAvatar} />
-            </div>
+            <UserInfoMenu />
           </div>
           <div
             className="header__humburger"
@@ -99,7 +111,7 @@ const Header = () => {
         ) : undefined}
 
         {hiddenLogin ? (
-          <ModalComponent value={"hiddenLogin"}>
+          <ModalComponent value={"hiddenLogin"} height={"400px"}>
             <UserLogin />
           </ModalComponent>
         ) : undefined}

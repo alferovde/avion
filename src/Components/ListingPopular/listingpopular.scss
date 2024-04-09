@@ -49,7 +49,7 @@
 @media (max-width: 1149px) {
   .listing-popular {
     width: 100%;
-    min-height: 1344px;
+    min-height: 1144px;
   }
   .listing-popular__wrapper {
     height: 1044px;
@@ -57,8 +57,8 @@
   .listing-popular__items {
     width: 100%;
     gap: 5px;
-    min-height: 1544px;
-    min-height: 100%;
+    height: 900px;
+    // min-height: 100%;
     justify-content: space-between;
   }
 }
@@ -82,10 +82,10 @@
 
 @media (max-width: 689px) {
   .listing-popular {
-    min-height: 1544px;
+    min-height: 1650px;
   }
   .listing-popular__wrapper {
-    min-height: 1344px;
+    min-height: 1500px;
     width: 100%;
   }
   .listing-popular__items {
@@ -95,6 +95,9 @@
 }
 
 @media (max-width: 640px) {
+  .listing-popular {
+    min-height: 1550px;
+  }
   .listing-popular__wrapper {
     min-height: 1344px;
     max-width: 100%;

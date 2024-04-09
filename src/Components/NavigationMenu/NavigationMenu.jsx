@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navigationmenu.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 const NavigationMenu = (props) => {
+  const navigate = useNavigate();
+
+  const [styleAnimate, setStyleAnimate] = useState("");
+
+  const handlerNavigate = (to) => {
+    console.log(to);
+    setStyleAnimate("animate__flip");
+    setTimeout(() => {
+      navigate(to);
+      setStyleAnimate("");
+    }, 1000);
+  };
+
   return (
     <nav className={props.className}>
-      <NavLink to={"#"}>Plant pots</NavLink>
-      <NavLink to={"#"}>Ceramics</NavLink>
-      <NavLink to={"#"}>Tables</NavLink>
-      <NavLink to={"#"}>Chairs</NavLink>
-      <NavLink to={"#"}>Crockery</NavLink>
-      <NavLink to={"#"}>Tableware</NavLink>
-      <NavLink to={"#"}>Cutlery</NavLink>
+      <NavLink to={"/product"}>Plant pots</NavLink>
+      <NavLink to={"/product"}>Ceramics</NavLink>
+      <NavLink to={"/product"}>Tables</NavLink>
+      <NavLink to={"/product"}>Chairs</NavLink>
+      <NavLink to={"/"}>Crockery</NavLink>
+      <NavLink to={"/"}>Tableware</NavLink>
+      <NavLink to={"/"}>Cutlery</NavLink>
     </nav>
   );
 };

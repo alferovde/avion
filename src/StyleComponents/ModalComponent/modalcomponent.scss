@@ -9,7 +9,7 @@
 
 .modal__wrapper {
   width: 90%;
-  height: 400px;
+  min-height: 400px;
   background-color: #fff;
   position: fixed;
   border-radius: 15px;
@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 4533333;
   &::before {
     width: 15px;
     border: 1px solid black;

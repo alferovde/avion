@@ -43,8 +43,6 @@ const StyleNotification = ({ type = "success", text }) => {
   const [hidden, setHidden] = useState(false);
   const [hiddenClass, setHiddenClass] = useState("animate__backInRight");
 
-  console.log("-->", styleNotification(type).icon.errorIcon);
-
   const openNotification = () => {
     setHidden(true);
   };

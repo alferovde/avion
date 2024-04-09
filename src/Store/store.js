@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import toggleWindow from "./Reducers/ModalWindowsReducer/hiddenWindow";
 import mainPageSlice from "./Reducers/MainPageSlice/MainPageSlice";
+import userSlice from "./Reducers/UserReducer/UserReducer";
+import shopSlice from "./Reducers/ShopReducer/ShopReducer";
 import { combineReducers } from "redux";
 
 export const footerMenu = [
@@ -36,62 +38,9 @@ export const footerMenu = [
 const reducer = combineReducers({
   modalWindown: toggleWindow,
   mainPage: mainPageSlice,
+  users: userSlice,
+  shop: shopSlice,
 });
 export const store = configureStore({
   reducer,
 });
-
-// export const footerMen1u = [
-//   {
-//     value: "Menu",
-//     data: {
-//       id: 0,
-//       value: "Menu",
-//       id: 1,
-//       value: "New arrivals",
-//       id: 2,
-//       value: "Best sellers",
-//       id: 3,
-//       value: "Recently viewed",
-//       id: 4,
-//       value: "Popular this week",
-//       id: 5,
-//       value: "All products",
-//     },
-//   },
-//   ,
-//   {
-//     value: "Categories",
-//     data: {
-//       id: 0,
-//       value: "Crockery",
-//       id: 1,
-//       value: "Furniture",
-//       id: 2,
-//       value: "Homeware",
-//       id: 3,
-//       value: "Plant pots",
-//       id: 4,
-//       value: "Chairs",
-//       id: 5,
-//       value: "Crockery",
-//     },
-//   },
-//   ,
-//   {
-//     value: "Our company",
-//     data: {
-//       id: 0,
-//       value: "About us",
-//       id: 1,
-//       value: "Vacancies",
-//       id: 2,
-//       value: "Contact us",
-//       id: 3,
-//       value: "Privacy",
-//       id: 4,
-//       value: "Returns policy",
-//     },
-//   },
-//   ,
-// ];

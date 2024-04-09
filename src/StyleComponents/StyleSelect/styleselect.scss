@@ -1,0 +1,68 @@
+.select__wrapper {
+  // position: relative;
+  // display: flex;
+  width: 200px;
+  z-index: 555555;
+  background-color: #b5ce29;
+  span {
+    font-size: 22px;
+  }
+}
+
+.select__body {
+  // display: flex;
+  // flex-direction: column;
+  position: absolute;
+
+  top: -25px;
+  left: -50px;
+  width: 150px;
+  height: 300px;
+  background-color: #88fa53;
+  box-sizing: border-box;
+  margin-top: 50px;
+  z-index: 555522222255;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  // input[type="checkbox"] {
+  //   margin-right: 12px;
+  //   width: 16px;
+  //   height: 0px;
+
+  //   &::after {
+  //     border: 1px solid var(--BorderGrey);
+  //     width: 16px;
+  //     height: 16px;
+  //     border-radius: 3px;
+  //     display: flex;
+  //     content: "";
+  //   }
+
+  //   &:checked {
+  //     &::after {
+  //       background-color: var(--DarkPrimary);
+
+  //       background-size: cover;
+  //       background-position: center center;
+  //       width: 16px;
+  //       height: 16px;
+  //       position: absolute;
+  //       content: "✔";
+  //       color: var(--BorderGrey);
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //     }
+  //   }
+  // }
+}
+
+// style={{
+//   position: "absolute",
+//   top: "50px",
+//   right: "-40px",
+//   display: "flex",
+//   flexDirection: "column",
+// }}

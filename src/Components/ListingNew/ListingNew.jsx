@@ -6,17 +6,17 @@ import StyleButton from "../../StyleComponents/StyleButton/StyleButton";
 import { useSelector } from "react-redux";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 const ListingNew = () => {
   const newShopItems = useSelector((state) => state.mainPage.new_shop_item);
-
+  const navigate = useNavigate();
   const storage_url = process.env.REACT_APP_STORAGE_SERVER;
   const renderNewShopItems = () => {
     return newShopItems.map((item) => {
       return !item.is_large ? (
-        <SwiperSlide>
-          <ShopComponent key={item.id} {...item} />
+        <SwiperSlide key={item.id}>
+          <ShopComponent {...item} />
         </SwiperSlide>
       ) : undefined;
     });
@@ -62,7 +62,9 @@ const ListingNew = () => {
         </div>
 
         <div className="listing_new__btn">
-          <StyleButton>View collection</StyleButton>
+          <StyleButton onClick={() => navigate("/product")}>
+            View collection
+          </StyleButton>
         </div>
       </div>
     </section>

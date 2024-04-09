@@ -16,4 +16,8 @@
   &:focus {
     background-color: #868686 !important;
   }
+
+  &:disabled {
+    background-color: red;
+  }
 }

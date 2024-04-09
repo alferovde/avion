@@ -3,11 +3,13 @@ import "./hero.scss";
 import hero__img from "../../Images/hero_img.jpg";
 import StyleButton from "../../StyleComponents/StyleButton/StyleButton";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { hero_title, hero_description, hero_img } = useSelector(
     (state) => state.mainPage.value
   );
+  const navigate = useNavigate();
   const storage_url = process.env.REACT_APP_STORAGE_SERVER;
 
   let backgroundImage = storage_url + hero_img;
@@ -18,8 +20,9 @@ const Hero = () => {
         <div className="hero__left">
           <h2>{hero_title}</h2>
           <StyleButton
-            onClick={() => console.log("sdf11")}
+            onClick={() => navigate("/product")}
             bgColor={"#f9f9f915"}
+            to={"/product"}
           >
             View collection
           </StyleButton>

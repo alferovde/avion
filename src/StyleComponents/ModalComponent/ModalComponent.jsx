@@ -13,7 +13,7 @@ const ModalComponent = ({
     "modal__container animate__animated animate__fadeIn"
   );
 
-  console.log("===>", visibleModal);
+  // console.log("===>", visibleModal);
   const closeModal = () => {
     if (visibleModal) {
       setStyleAnimate("modal__container animate__animated animate__fadeOut");

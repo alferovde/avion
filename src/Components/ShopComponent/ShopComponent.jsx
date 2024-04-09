@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "./shopcomponent.scss";
 import { useNavigate } from "react-router-dom";
-const ShopComponent = ({ title, price, img, id, is_large, style }) => {
+const ShopComponent = ({
+  title,
+  price,
+  img,
+  id,
+  is_large,
+  style,
+  className,
+}) => {
   const storage_url = process.env.REACT_APP_STORAGE_SERVER;
   const [animation, setAnimation] = useState("");
 
@@ -19,8 +27,8 @@ const ShopComponent = ({ title, price, img, id, is_large, style }) => {
     <div
       className={
         is_large
-          ? `shop-component__item-large  animate__animated ${animation}`
-          : `shop-component__item animate__animated  ${animation}`
+          ? `shop-component__item-large  animate__animated ${animation} ${className}`
+          : `shop-component__item animate__animated  ${animation}  ${className}`
       }
       onClick={() => navigateTo(id)}
       style={style}

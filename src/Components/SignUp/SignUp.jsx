@@ -51,19 +51,7 @@ const SignUp = () => {
           <h2>{email_title}</h2>
           <p>{email_description}</p>
           <div className="signup__form">
-            <SignUpComponent
-              placeholder={"your@email.com"}
-              // style={styleInput}
-            />
-            {/* <StyleInput style={styleInput} onChange={setSignUpValue} />
-            <StyleButton
-              width="118px"
-              bgColor="#2A254B"
-              color={"white"}
-              onClick={sendSignUpData}
-            >
-              Sign up
-            </StyleButton> */}
+            <SignUpComponent placeholder={"your@email.com"} />
           </div>
         </div>
       </div>

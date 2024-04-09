@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchMainPage = createAsyncThunk(
-  "mainPage/getMainPage1",
+  "mainPage/getMainPage",
   async () => {
     let result = await axios({
       method: "get",
@@ -23,6 +23,7 @@ const initialState = {
   features__items: [],
   new_shop_item: [],
   popular_shop_item: [],
+  mainPageLoading: false,
 };
 
 const mainPageSlice = createSlice({
@@ -32,13 +33,14 @@ const mainPageSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchMainPage.pending, (state, action) => {
-      // console.log("pending", state);
-      // console.log("pending", action);
+      console.log("pending", state);
+      console.log("pending", action);
+      state.mainPageLoading = true;
     });
     builder.addCase(fetchMainPage.fulfilled, (state, action) => {
-      console.log("fulfilled", state);
-      console.log("fulfilled", action.payload);
-
+      // console.log("fulfilled", state);
+      console.log("popular_shop_itemfulfilled--->", action.payload);
+      state.mainPageLoading = false;
       state.value = action.payload[0];
       state.features__items = action.payload[1];
       state.new_shop_item = action.payload[2];

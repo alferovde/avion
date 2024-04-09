@@ -14,8 +14,10 @@ const StyleButton = (props) => {
         height: props.height,
         backgroundColor: butoonColor(props.bgColor),
         color: props.color,
+        order: props.order,
       }}
       onClick={() => (props.onClick ? props.onClick() : undefined)}
+      disabled={props.disabled}
     >
       {props.children}
     </button>

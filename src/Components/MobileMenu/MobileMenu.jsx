@@ -9,8 +9,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { toggle } from "../../Store/Reducers/ModalWindowsReducer/hiddenWindow";
 import UserLogin from "../UserLogin/UserLogin";
 import Search from "../Search/Search";
+import UserInfoMenu from "../UserInfoMenu/UserInfoMenu";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 const MobileMenu = (props) => {
   const dispatch = useDispatch();
+  const [cookies] = useCookies();
+  const navigate = useNavigate();
   const [hiddenMenuStyle, setHiddenMenuStyle] = useState(
     "mobile-menu__wrapper animate__animated  animate__slideInRight "
   );
@@ -26,6 +31,19 @@ const MobileMenu = (props) => {
     }
   };
 
+  const handleNagateCart = () => {
+    navigate(
+      `/cart/${cookies.current_user?.id ? cookies.current_user?.id : 1}`,
+      { replace: true }
+    );
+    setHiddenMenuStyle(
+      "mobile-menu__wrapper animate__animated animate__slideOutRight"
+    );
+    setTimeout(() => {
+      props.setValue(!props.value);
+    }, 1000);
+  };
+
   return (
     <div className="mobilemenu__container" onClick={() => closeMenu()}>
       <div className={hiddenMenuStyle} onClick={(e) => e.stopPropagation()}>
@@ -34,15 +52,15 @@ const MobileMenu = (props) => {
         <NavigationMenu className="mobile-menu" />
         <br />
 
-        <ShopingCartComponent onClick={() => dispatch(toggle("hiddenCart"))} />
+        <ShopingCartComponent
+          // onClick={() => dispatch(toggle("hiddenCart"))}
+          onClick={() => handleNagateCart()}
+        />
         <br />
-        <div className="" onClick={() => dispatch(toggle("hiddenLogin"))}>
-          {/* <UserLogin /> */}
-          <SVGComponent src={userAvatar} />
-        </div>
+        <UserInfoMenu />
+
         <br />
         <div className="" onClick={() => dispatch(toggle("hiddenSearch"))}>
-          {/* <Search /> */}
           <SVGComponent src={searchImg} />
         </div>
       </div>

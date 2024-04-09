@@ -38,8 +38,6 @@ const SignUpComponent = ({ placeholder }) => {
     // width: "354px",
   };
 
-  console.log("-->", placeholder);
-
   return (
     <div className="signup-component">
       <StyleInput

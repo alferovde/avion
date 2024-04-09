@@ -11,7 +11,6 @@ import FeaturesTouch from "../../Components/FeaturesTouch/FeaturesTouch";
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  const mainPage = useSelector((state) => state.mainPage.value);
 
   useEffect(() => {
     dispatch(fetchMainPage());

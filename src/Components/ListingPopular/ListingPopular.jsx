@@ -4,11 +4,12 @@ import StyleButton from "../../StyleComponents/StyleButton/StyleButton";
 import { useSelector } from "react-redux";
 import ShopComponent from "../ShopComponent/ShopComponent";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 const ListingPopular = () => {
   const newShopItems = useSelector((state) => state.mainPage.popular_shop_item);
   const largeItemStyle = { order: "1" };
   const largeItemStyle2 = { order: "2" };
-
+  const navigate = useNavigate();
   const renderPopularShopItems = () => {
     return newShopItems.map((item) => {
       {
@@ -33,7 +34,9 @@ const ListingPopular = () => {
         <div className="listing-popular__items">{renderPopularShopItems()}</div>
 
         <div className="listing-popular__btn">
-          <StyleButton>View collection</StyleButton>
+          <StyleButton onClick={() => navigate("/product")}>
+            View collection
+          </StyleButton>
         </div>
       </div>
     </section>

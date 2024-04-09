@@ -14,12 +14,12 @@ const Footer = () => {
   };
 
   const renderMenus = () => {
-    return footerMenu.map((menu) => {
+    return footerMenu.map((menu, inedx) => {
       return (
-        <ul className={`footer_menu`}>
+        <ul key={inedx} className={`footer_menu`}>
           <span>{menu.value}</span>
-          {menu.data.map((item) => {
-            return <li>{item}</li>;
+          {menu.data.map((item, inedx) => {
+            return <li key={inedx}>{item}</li>;
           })}
         </ul>
       );

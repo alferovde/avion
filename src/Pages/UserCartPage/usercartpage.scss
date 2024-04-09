@@ -1,0 +1,217 @@
+.usercart {
+  min-height: 100vh;
+  margin-bottom: 48px;
+}
+
+.usercart__wrapper {
+  //   position: relative;
+}
+
+.shopingCart__container {
+  h2 {
+    text-align: left;
+    font-size: 36px;
+  }
+}
+
+.shopingCart__header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+  border-bottom: 1px solid var(--BorderGrey);
+  padding-bottom: 12px;
+  .product__title {
+    width: 800px;
+  }
+  .product__quantity {
+    width: 250px;
+    text-align: center;
+  }
+  .product__total {
+    width: 50px;
+  }
+}
+
+.shopingCart__items {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--BorderGrey);
+
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart__item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart_product {
+    display: flex;
+    width: 800px;
+
+    img {
+      width: 15%;
+    }
+
+    .cart__item-info {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      justify-content: center;
+      color: #2a254b;
+
+      h3 {
+        font-size: 20px;
+        font-family: "Clash Display", sans-serif;
+        font-weight: 400;
+        margin: 0;
+      }
+      p {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .cart_quantity {
+    width: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart_total {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.shopingCart__footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: end;
+
+  p {
+    font-size: 20px;
+    font-family: "Clash Display", sans-serif;
+
+    span {
+      font-size: 24px;
+      margin-left: 15px;
+    }
+  }
+  span {
+    font-size: 14px;
+    font-family: "Satoshi", sans-serif;
+  }
+
+  button {
+    width: 172px;
+    height: 56px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .shopingCart__container {
+    h2 {
+      text-align: left;
+      font-size: 24px;
+    }
+  }
+  .shopingCart__header {
+    display: none;
+  }
+  .shopingCart__items {
+    .cart__item {
+      list-style: none;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      // height: 500px;
+      // background-color: #7bf535;
+    }
+
+    .cart_product {
+      // background-color: #f54646;
+      width: 100%;
+      flex-direction: row;
+      img {
+        width: 50%;
+      }
+
+      .cart__item-info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        justify-content: center;
+        color: #2a254b;
+
+        h3 {
+          font-size: 20px;
+          font-family: "Clash Display", sans-serif;
+          font-weight: 400;
+          margin: 0;
+        }
+        p {
+          font-size: 14px;
+        }
+
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+    .cart_quantity {
+      // background-color: #46c3f5;
+      width: 100%;
+      height: 30px;
+      &::before {
+        content: "Quantity: ";
+        margin-right: 15px;
+      }
+    }
+
+    .cart_total {
+      // background-color: #e4f124;
+      width: 100%;
+      height: 30px;
+      border-bottom: 1px solid var(--BorderGrey);
+      &::before {
+        content: "Total: ";
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .shopingCart__footer {
+    button {
+      width: 100%;
+      height: 56px;
+      margin-top: 16px;
+    }
+  }
+}
