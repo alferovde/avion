@@ -96,7 +96,17 @@
 
 @media (max-width: 640px) {
   .listing-popular {
-    min-height: 1550px;
+    min-height: 1700px;
+  }
+  .listing-popular__wrapper {
+    min-height: 1544px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .listing-popular {
+    min-height: 1500px;
   }
   .listing-popular__wrapper {
     min-height: 1344px;
