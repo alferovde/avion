@@ -6,13 +6,11 @@ export const fetchMainPage = createAsyncThunk(
   async () => {
     let result = await axios({
       method: "get",
-      url: "http://127.0.0.1:8000/api",
+      url: "http://mainserver.dealferov.ru/public/api",
+      headers: {
+        // "Access-Control-Allow-Origin": "*",
+      },
     });
-    // .then(function (response) {
-    //   console.log("response", response);
-
-    //   // return response.data;
-    // });
 
     return result.data;
   }
@@ -33,23 +31,16 @@ const mainPageSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchMainPage.pending, (state, action) => {
-      console.log("pending", state);
-      console.log("pending", action);
       state.mainPageLoading = true;
     });
     builder.addCase(fetchMainPage.fulfilled, (state, action) => {
-      // console.log("fulfilled", state);
-      console.log("popular_shop_itemfulfilled--->", action.payload);
       state.mainPageLoading = false;
       state.value = action.payload[0];
       state.features__items = action.payload[1];
       state.new_shop_item = action.payload[2];
       state.popular_shop_item = action.payload[3];
     });
-    builder.addCase(fetchMainPage.rejected, (state, action) => {
-      // console.log("rejected", state);
-      // console.log("rejected", action);
-    });
+    builder.addCase(fetchMainPage.rejected, (state, action) => {});
   },
 });
 

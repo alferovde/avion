@@ -49,10 +49,7 @@ const ProductID = () => {
     }
   };
 
-  // console.log("---->>>", cookies.current_user.id);
-
   const handlerAddToCart = () => {
-    console.log("-cookies--->", cookies.current_user?.hasOwnProperty("id"));
     if (cookies.current_user?.hasOwnProperty("id")) {
       dispatch(
         fetchAddToCart({
@@ -62,7 +59,6 @@ const ProductID = () => {
         })
       );
     } else {
-      console.log("need to register");
       setUserNeedregister(true);
     }
 

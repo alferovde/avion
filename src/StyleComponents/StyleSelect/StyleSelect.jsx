@@ -12,17 +12,10 @@ const StyleSelect = ({ children, title, style, dataRender }) => {
   };
 
   const renderChildren = () => {
-    return dataRender.map((item) => {
+    return dataRender.map((item, index) => {
       return (
-        <label htmlFor={item}>
-          <input
-            type="checkbox"
-            name={item}
-            id={item}
-            // checked={filterValue.}
-            // onClick={() => handlerPriceChange(item)}
-            // onClick={(e) => e.stopPropagation()}
-          />
+        <label htmlFor={item} key={index}>
+          <input type="checkbox" name={item} id={item} />
           {item}
         </label>
       );

@@ -20,7 +20,6 @@ function App() {
     (state) => state.mainPage.mainPageLoading
   );
 
-  console.log("--->", mainPageLoading);
   useEffect(() => {
     if (mainPageLoading) {
       document.body.style.overflow = "hidden";

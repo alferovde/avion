@@ -7,20 +7,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router-dom";
 const ListingPopular = () => {
   const newShopItems = useSelector((state) => state.mainPage.popular_shop_item);
-  const largeItemStyle = { order: "1" };
-  const largeItemStyle2 = { order: "2" };
+  const largeItemStyle = { order: "2" };
+  const largeItemStyle2 = { order: "1" };
   const navigate = useNavigate();
   const renderPopularShopItems = () => {
     return newShopItems.map((item) => {
       {
-        return item.is_large ? (
-          // <SwiperSlide>
+        return item.is_large == 0 ? (
           <ShopComponent key={item.id} {...item} style={largeItemStyle} />
         ) : (
-          // </SwiperSlide>
-          // <SwiperSlide>
           <ShopComponent key={item.id} {...item} style={largeItemStyle2} />
-          // </SwiperSlide>
         );
       }
     });

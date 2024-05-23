@@ -26,7 +26,7 @@ const ShopComponent = ({
   return (
     <div
       className={
-        is_large
+        is_large == 1
           ? `shop-component__item-large  animate__animated ${animation} ${className}`
           : `shop-component__item animate__animated  ${animation}  ${className}`
       }

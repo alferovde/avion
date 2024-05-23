@@ -13,7 +13,6 @@ const FeaturesTouch = () => {
   let description_top = features2_description?.slice(0, 117);
   let description_bottom = features2_description?.slice(118);
 
-  console.log(backgroundImage);
   return (
     <section className="featurstouch">
       <div className="featurstouch__wrapper container  ">

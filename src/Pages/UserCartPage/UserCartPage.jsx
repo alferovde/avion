@@ -11,7 +11,7 @@ const UserCartPage = () => {
   const [userNeedRegister, setUserNeedregister] = useState(false);
   const dispatch = useDispatch();
   const userCart = useSelector((state) => state.shop.userCartArray);
-  console.log("=--=userCart-=-=>>", userCart);
+
   useEffect(() => {
     if (cookies.current_user?.hasOwnProperty("id")) {
       setUserNeedregister(true);

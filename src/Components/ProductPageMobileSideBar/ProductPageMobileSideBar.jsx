@@ -15,12 +15,14 @@ const ProductPageMobileSideBar = ({ filterValue, setFilterValue }) => {
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         dataRender={typeData}
+        key={1}
       ></StyleSelect>
       <StyleSelect
         title={"Filters"}
         filterValue={filterValue}
         setFilterValue={setFilterValue}
         dataRender={designerData}
+        key={2}
       ></StyleSelect>
     </div>
   );

@@ -45,14 +45,13 @@ const ProductPageSideBar = ({ filterValue, setFilterValue }) => {
   };
 
   const renderPriceChange = () => {
-    return priceData.map((item) => {
+    return priceData.map((item, index) => {
       return (
-        <label htmlFor={item}>
+        <label htmlFor={item} key={index}>
           <input
             type="checkbox"
             name={item}
             id={item}
-            // checked={filterValue.}
             onClick={() => handlerPriceChange(item)}
           />
           {item}
@@ -62,9 +61,9 @@ const ProductPageSideBar = ({ filterValue, setFilterValue }) => {
   };
 
   const handlerTypeRender = () => {
-    return typeDataState.map((item) => {
+    return typeDataState.map((item, index) => {
       return (
-        <label htmlFor={item.title}>
+        <label htmlFor={item.title} key={index}>
           <input
             type="checkbox"
             name=""
@@ -95,9 +94,9 @@ const ProductPageSideBar = ({ filterValue, setFilterValue }) => {
   };
 
   const handlerDesignerRender = () => {
-    return designerData.map((item) => {
+    return designerData.map((item, index) => {
       return (
-        <label htmlFor={item}>
+        <label htmlFor={item} key={index}>
           <input
             type="checkbox"
             name=""
@@ -111,7 +110,6 @@ const ProductPageSideBar = ({ filterValue, setFilterValue }) => {
   };
 
   const hanlerDesignerSelect = (value) => {
-    // console.log("===>", value);
     if (!filterValue.product_designer.split(", ").includes(value)) {
       setFilterValue({
         ...filterValue,

@@ -8,8 +8,8 @@ import { footerMenu } from "../../Store/store";
 import SignUpComponent from "../../StyleComponents/SignUpComponent/SignUpComponent";
 const Footer = () => {
   const renderSocialIcons = () => {
-    return socialIcons.map((item) => {
-      return <li>{<SVGComponent src={item.value} />}</li>;
+    return socialIcons.map((item, index) => {
+      return <li key={index}>{<SVGComponent src={item.value} />}</li>;
     });
   };
 
@@ -26,12 +26,6 @@ const Footer = () => {
     });
   };
 
-  // const styleInput = {
-  //   placeholder: "your@email.com",
-
-  //   backgroundColor: "#4E4D93",
-  // };
-
   return (
     <footer className="footer">
       <div className="footer__wrapper container">
@@ -40,14 +34,7 @@ const Footer = () => {
           <div className="footer__signup">
             <h3>Join our mailing list</h3>
             <div className="footer__signup__form">
-              {/* <StyleInput style={styleInput} />
-              <StyleButton bgColor={"white"} color={"#4E4D93"} width={"118px"}>
-                Sign up
-              </StyleButton> */}
-              <SignUpComponent
-                placeholder={"your@email.com"}
-                // style={styleInput}
-              />
+              <SignUpComponent placeholder={"your@email.com"} />
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ export const fetchUserById = createAsyncThunk(
   "users/getUserById",
   async (user) => {
     let result = await axios({
-      url: `http://127.0.0.1:8000/api/users`,
+      url: `http://mainserver.dealferov.ru/public/api/users`,
       method: "post",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: user,
@@ -19,7 +19,7 @@ export const fetchUserIsDb = createAsyncThunk(
   "users/checkUser",
   async (user) => {
     let result = await axios({
-      url: `http://127.0.0.1:8000/api/checkuser`,
+      url: `http://mainserver.dealferov.ru/public/api/checkuser`,
       method: "post",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: { email: user },
@@ -33,7 +33,7 @@ export const fetchRegisterUser = createAsyncThunk(
   "users/registerUser",
   async (user) => {
     let result = await axios({
-      url: "http://127.0.0.1:8000/api/registeruser",
+      url: "http://mainserver.dealferov.ru/public/api/registeruser",
       method: "post",
       data: user,
     });

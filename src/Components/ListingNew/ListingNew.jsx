@@ -14,7 +14,7 @@ const ListingNew = () => {
   const storage_url = process.env.REACT_APP_STORAGE_SERVER;
   const renderNewShopItems = () => {
     return newShopItems.map((item) => {
-      return !item.is_large ? (
+      return item.is_large == 0 ? (
         <SwiperSlide key={item.id}>
           <ShopComponent {...item} />
         </SwiperSlide>
@@ -28,15 +28,10 @@ const ListingNew = () => {
         <h2>New ceramics</h2>
 
         <div className="listing__items">
-          {/* <Slider {...settings}>{renderNewShopItems()}</Slider> */}
           <Swiper
             slidesPerView={1}
             spaceBetween={30}
             freeMode={true}
-            // pagination={{
-            //   clickable: true,
-            // }}
-            // modules={[FreeMode, Pagination]}
             className="mySwiper"
             breakpoints={{
               400: {
