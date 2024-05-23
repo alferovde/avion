@@ -18,7 +18,7 @@ export const fetchAddToCart = createAsyncThunk(
   "shop/addToCart",
   async (data) => {
     let result = await axios({
-      url: `http://mainserver.dealferov.ru/public/api/addtocart/`,
+      url: `http://mainserver.dealferov.ru/public/api/addtocart`,
       method: "post",
       data: data,
     });
